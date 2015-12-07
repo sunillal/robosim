@@ -1,0 +1,45 @@
+#simulator settings
+NUM_LEGS 5
+NUM_MODS 4 #number of modules
+NUM_BITS 4
+SIM_STEPSIZE 0.01
+TRANSITION_STEP 80
+NUM_STATE_TRANS -1 # -1 for dynamic 
+TARGET_LEN 0.02
+TARGET_THETA 0
+ALPHA 1 #state weighting parameter for calculating fitness
+MODE evolve  #choose from visual, evolve
+BROKEN	0 0 0 0 0 0
+	0 0 0 0 0 0
+	0 0 0 0 0 0
+	0 0 0 0 0 0
+	0 0 0 0 0 0 ;
+
+#output files
+RESULT_FILENAME ./result/GA/resultga2000a1.txt
+PARAM_FILENAME ./result/GA/paramga2000a1.txt
+IN_FILENAME iof.txt
+
+#General optimization settings
+MAX_CHR_SIZE 6
+MIN_CHR_SIZE 1
+GLEN 80  #gene length = num_legs*num_mods*num_bits
+CLEN -1  # -1 for dynamic chromosome length
+POP_SIZE 75  #here
+MAX_GEN 400
+SEED -1
+MR 0.005
+CR 0.8
+CONTROLLER FSMint
+PROBLEM_TYPE minimize
+FITNESS_EVAL directional #choose from linear, directional or angular
+OFFSET 2000 #to transform maximization problem to minimization 
+
+#CA2dDiff settings
+CLENCR 16404
+CLENLR 16484
+
+DE_STRATEGY Best1Bin
+F 0.5
+
+END

@@ -1,0 +1,42 @@
+#simulator settings
+NUM_LEGS 5
+NUM_MODS 3 #number of modules
+NUM_BITS 4
+SIM_STEPSIZE 0.01
+TRANSITION_STEP 80
+NUM_STATE_TRANS 42 # -1 for dynamic 
+TARGET_LEN 0.02  #meters
+TARGET_THETA 0   #radians
+ALPHA 1 #state weighting parameter for calculating fitness
+MODE visual
+BROKEN	0 0 0 0 0 0
+	0 0 0 0 0 0
+	0 0 0 0 0 0
+	0 0 0 0 0 0
+	0 0 0 0 0 0 ;
+
+#output files
+RESULT_FILENAME ./GA/result.txt
+PARAM_FILENAME ./GA/param.txt
+IN_FILENAME iof.txt
+
+#General optimization settings
+MAX_CHR_SIZE 6
+MIN_CHR_SIZE 1
+GLEN 60
+CLEN -1  # -1 for dynamic chromosome length
+POP_SIZE 15
+MAX_GEN 10
+SEED 20
+MR 0.005
+CR 0.8
+CONTROLLER FSMint
+PROBLEM_TYPE minimize
+FITNESS_EVAL directional #choose from linear, directional or angular
+OFFSET 2000 #to transform minimization problem to maximization
+
+#CA2dDiff settings
+CLENCR 16404
+CLENLR 16484
+
+END
