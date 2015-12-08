@@ -7,13 +7,13 @@ To use this simulator you need to download and install [open dynamics engine] (h
 ## Install the robotic simulator
 Place the robosim directory under the ode directory, eg: ../ode-0.13.1/robosim
 
-In the robosim directory, compile  
+In the robosim directory, compile the source and create executable 
 
 $ make all
 
 Run the simulator passing the parameter file (sfile.txt) as an input
 
-./roboSim sfile.txt
+$ ./roboSim sfile.txt
 
 ## Performing simulations
 
