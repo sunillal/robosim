@@ -1,11 +1,11 @@
 #simulator settings
 NUM_LEGS 5 # number of leg in the robot 
 NUM_MODS 4 #number of modules per leg
-NUM_BITS 4 #number of bits 
+NUM_BITS 4 number of bits to represent angular displacement of a module 
 SIM_STEPSIZE 0.01 #ODE simulation step size
-TRANSITION_STEP 80 #Defines how many time 
+TRANSITION_STEP 80 #Defines the number of simulation steps in one state transition
 NUM_STATE_TRANS -1 # how many state transitions; -1 for dynamic 
-TARGET_LEN 0.02 #Target length and angle (theta) defines the goal 
+TARGET_LEN 0.02 #Target length (meters) and angle (radians) defines the goal position
 TARGET_THETA 0
 ALPHA 1 #state weighting parameter for calculating fitness
 MODE visual  #choose from visual, evolve
@@ -23,13 +23,13 @@ PARAM_FILENAME ./result/param.txt
 IN_FILENAME iof.txt
 
 #General optimization settings
-MAX_CHR_SIZE 6
-MIN_CHR_SIZE 1
+MAX_CHR_SIZE 6 # maximum number of genes in chromosome
+MIN_CHR_SIZE 1 # minimum number of genes in chromosome
 GLEN 80  #gene length = num_legs*num_mods*num_bits
 CLEN -1  # -1 for dynamic chromosome length
-POP_SIZE 75  
-MAX_GEN 400
-SEED -1 # seed for random number generator; -1 randomises the seed
+POP_SIZE 75 # Population size 
+MAX_GEN 400 # Maximum number of generations
+SEED -1 # seed for random number generator; -1 randomizes the seed
 MR 0.005  # GA mutation rate
 CR 0.8    # GA crossover rate
 
@@ -43,7 +43,7 @@ CR 0.8    # GA crossover rate
 # FSMint - Finite State Machine with continuous state of modules represented by double
 CONTROLLER FSMint  
 
-PROBLEM_TYPE minimize  # choose from minimise or maximise depending on the objective function 
+PROBLEM_TYPE minimize  # choose from minimize or maximize depending on the objective function 
 FITNESS_EVAL directional #choose from linear, directional or angular
 OFFSET 2000 #to transform maximization problem to minimization 
 
@@ -52,7 +52,8 @@ CLENCR 16404
 CLENLR 16484
 
 #Differential Evolution algorithm settings
+#Choose DE strategy from (Rand1Exp, Rand1Bin, Best1Bin)
 DE_STRATEGY Best1Bin
-F 0.5
+F 0.5 #Weighting factor
 
 END
